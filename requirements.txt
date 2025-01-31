@@ -1,0 +1,5 @@
+pydantic~=2.10.6
+fastapi~=0.115.8
+uvicorn~=0.34.0
+SQLAlchemy~=2.0.37
+aiohttp~=3.11.11

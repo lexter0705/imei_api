@@ -1,13 +1,14 @@
+import os
+
+from database.creator import create_database
+from json_checker import read_config
+
+config = read_config()
+if not os.path.exists(config["database_path"]):
+    create_database(config["database_path"])
+
+from server.router import router
 from fastapi import FastAPI
 
 app = FastAPI()
-
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+app.include_router(router)

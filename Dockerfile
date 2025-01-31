@@ -1,4 +1,9 @@
-FROM ubuntu:latest
-LABEL authors="lexte"
+FROM python:3.12.8
 
-ENTRYPOINT ["top", "-b"]
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+COPY . .
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
