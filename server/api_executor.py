@@ -10,9 +10,7 @@ class ApiExecutor:
     def __find_with_true_imei(imei: str, response: list) -> list:
         """Так как api, указанное для тестового задания, возвращало все телефоны,
          а не один конкретный, пришлось делать отдельный метод"""
-        print(imei)
         true_phones = [i for i in response if i["deviceId"] == imei]
-        print(true_phones)
         return true_phones
 
     async def check_imei(self, imei: str) -> list:

@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, engine_from_config
+from sqlalchemy import create_engine
 from sqlalchemy.dialects.mysql import insert
 from sqlalchemy.orm import DeclarativeBase, Mapped
 from sqlalchemy.testing.schema import mapped_column
